@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Movie Rental</title>
+  <title>Consulta de Películas para Renta</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -25,32 +25,23 @@
   </style>
 </head>
 <body>
-  <h1>Available Movies for Rent</h1>
-  <ul class="movie-list" id="movie-list"></ul>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      fetch('movies.json')
-        .then(response => response.json())
-        .then(movies => {
-          const movieList = document.getElementById('movie-list');
-          movies.forEach(movie => {
-            const movieItem = document.createElement('li');
-            movieItem.classList.add('movie-item');
-
-            movieItem.innerHTML = `
-              <h3>${movie.title} (${movie.year})</h3>
-              <p><strong>Genre:</strong> ${movie.genre}</p>
-              <p>${movie.description}</p>
-            `;
-
-            movieList.appendChild(movieItem);
-          });
-        })
-        .catch(error => {
-          console.error('Error fetching movie data:', error);
-        });
-    });
-  </script>
+  <h1>Películas Disponibles para Renta</h1>
+  <ul class="movie-list">
+    <li class="movie-item">
+      <h3>The Matrix (1999)</h3>
+      <p><strong>Género:</strong> Acción, Ciencia Ficción</p>
+      <p>Un hacker informático descubre la verdadera naturaleza de su realidad y su papel en la guerra contra sus controladores.</p>
+    </li>
+    <li class="movie-item">
+      <h3>Inception (2010)</h3>
+      <p><strong>Género:</strong> Acción, Aventura, Ciencia Ficción</p>
+      <p>Un ladrón que roba secretos corporativos a través del uso de la tecnología de intercambio de sueños recibe la tarea inversa de plantar una idea en la mente de un CEO.</p>
+    </li>
+    <li class="movie-item">
+      <h3>Interstellar (2014)</h3>
+      <p><strong>Género:</strong> Aventura, Drama, Ciencia Ficción</p>
+      <p>Un equipo de exploradores viaja a través de un agujero de gusano en el espacio en un intento por asegurar la supervivencia de la humanidad.</p>
+    </li>
+  </ul>
 </body>
 </html>
